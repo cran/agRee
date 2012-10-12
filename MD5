@@ -1,0 +1,12 @@
+5e01c113976990024cd7ff71ecdeed28 *DESCRIPTION
+84f64a4dfb4a66b76183326471e20b3a *NAMESPACE
+f6c983945eaed2755cdd094e13cc81de *R/agree.ccc.R
+46378f32f093e18bce98c25e6085a95a *R/agree.plot.R
+0e2a6e2a66ad71cbc88194fd43f65f18 *R/agree.wscv.R
+be686b768d580525cdc9eae780b5fc5c *data/judgeRatings.rda
+6e231b43542f3431768ebbb00341361f *data/lesionBurden.rda
+e705444c0191d583b8bb2b22e39dc39d *man/agree.ccc.Rd
+debbc2a3981ce947e55841bf5e527473 *man/agree.plot.Rd
+cd83aaaff8d5d2107340303b0b84cd66 *man/agree.wscv.Rd
+fe3c9de6ad731518f94bdf4793175ee6 *man/judgeRatings.Rd
+fcb8de338b81a0a04ef675e11eb02b5b *man/lesionBurden.Rd
