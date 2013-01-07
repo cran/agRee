@@ -1,8 +1,7 @@
 \name{agree.ccc}
 \title{Concordance Correlation Coefficient}
 \alias{agree.ccc}
-\alias{ccc.mcmc.jeffreys}
-\alias{ccc.mcmc.conjugate}
+\alias{ccc.mvn.mcmc}
 \alias{ccc.nonpara.jackknife}
 \description{
   Obtain confidence interval and point estimate of the
@@ -10,7 +9,8 @@
 }
 \usage{
   agree.ccc(ratings, conf.level=0.95,
-            method=c("jeffreys", "conjugate", "jackknifeZ", "jackknife"),
+            method=c("jackknifeZ", "jackknife",
+                     "mvn.jeffreys", "mvn.conjugate"),
             nsim=10000)
 }
 \arguments{
@@ -19,28 +19,24 @@
   \item{conf.level}{confidence level of the interval. The default
 	is 0.95.}
   \item{method}{a character string specifying the method used to
-	obtain confidence interval of the CCC.
-    It must be one of "jeffreys", "conjugate", "jackknifeZ", and
-    "jackknife" and may be abbreviated.	The default is "jeffreys".}
-  \item{nsim}{number of iterations used in the Bayesian MCMC with
-	Jeffreys or conjugate priors.}
+	obtain the estimate of the CCC.
+    It must be one of "jackknifeZ", "jackknife", "mvn.jeffreys" and
+	"mvn.conjugate" 
+    and may be abbreviated.	The default is "jackknifeZ".}
+  \item{nsim}{number of iterations used in the Bayesian approach with
+	Jeffreys or conjugate prior.}
 }
 \details{
-  The point estimate is based on what proposed in Carrasco and Jover (2003).
-  To obtain confidence interval, the methods available include the
+  To obtain point estimate and confidence interval, the methods available include the
   jackknife method with and without Z-transformation and the Bayesian
-  MCMC approach with Jeffreys and conjugate priors as in Feng et al.(2012).
+  approach with Jeffreys and conjugate priors for the multivariate
+  normal distribution.
 }
 \value{
     Point estimate and lower and upper bounds of the confidence
     interval of the CCC. 
 }
 \references{
-  Josep L. Carrasco and Lluis Jover (2003)
-  Estimating the generalized concordance correlation coefficient through
-  variance components.
-  \emph{Biometrics} \bold{59} 849-858
-
 
   Dai Feng, Vladimir Svetnik, Alexandre Coimbra and Richard Baumgartner (2012)
   A comparison of confidence interval methods for the concordance
@@ -50,7 +46,7 @@
 
   Lawrence I-Kuei Lin (1989)
   A concordance correlation coefficient to evaluate reproducibility.
-  \emph{Biometrics} \bold{45} 255-268.
+  \emph{Biometrics} \bold{45} 255-268
 
 } 
 \seealso{

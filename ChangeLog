@@ -1,0 +1,11 @@
+2013-1-02 
+	* R/agree.ccc.R: move the code that generates samples from multivariate
+	normal distribution under different priors to package 'miscF'.
+	* R/agree.ccc.R: change the methods 'jeffreys' and 'conjugate' to 
+	'mvn.jeffreys' and 'mvn.conjugate' respectively and add point 
+	estimates to different methods.
+	* man/agree.ccc.Rd: reflect the changes made in agree.ccc.R.
+	* DESCRIPTION: change to version 0.1-2; add 'miscF' to Depends; remove
+	'coda' and 'MCMCpack' from Depends.
+	
+	

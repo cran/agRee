@@ -15,13 +15,13 @@ panel.blandaltman <- function(x, y, ...){
     sd.diff <- sd(diff)
     l.limit <- mu.diff - 3*sd.diff
     u.limit <- mu.diff + 3*sd.diff
-
+    
     usr <- par("usr"); on.exit(par(usr))
     par(usr = c(min(min(x), range(mean)[1]),
                 max(max(x), range(mean)[2]),
                 min(min(y)-0.10*diff(range(y)), l.limit),
                 max(max(y)+0.10*diff(range(y)), u.limit)))
-
+    
     lines(mean, diff, type="p")
     abline(h=0, lwd=2)
     abline(h=mu.diff, col="red", lty=3, lwd=2)
