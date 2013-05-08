@@ -1,3 +1,20 @@
+2013-5-04 
+	* R/agree.ccc.R: fix a bug in error checking of input parameters of function ccc.mm.
+	* R/agree.ccc.R;agree.wscv.R;agree.plot.R: Add actions to address missing values (NAs)
+	* man/agree.ccc.Rd;agree.wscv.Rd;agree.plot.Rd: reflect the changes made in corresponding .R files
+	Thank David Shera and Richard Baumgartner for pointing out the bug and 
+	requirement for handling missing data.
+	
+2013-4-04 
+	* R/agree.ccc.R: add a bootstrap method.  
+	* man/agree.ccc.Rd: reflect the changes made in agree.ccc.R.
+	
+2013-1-15 
+	* R/agree.ccc.R: add a new method based on the multivariate t 
+	distribution.
+	* man/agree.ccc.Rd: reflect the changes made in agree.ccc.R.
+	* DESCRIPTION: change to version 0.1-3.
+	
 2013-1-02 
 	* R/agree.ccc.R: move the code that generates samples from multivariate
 	normal distribution under different priors to package 'miscF'.

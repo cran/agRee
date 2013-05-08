@@ -28,10 +28,18 @@ wscv.delta <- function(alpha, theta, rho, k, n){
 }
 
 #---------------------------------------------------------------------------
-agree.wscv <- function(ratings, conf.level=0.95, method=c("vst", "delta")){
+agree.wscv <- function(ratings, conf.level=0.95, method=c("vst", "delta"), NAaction=c("fail", "omit")){
 
-    if(!is.matrix(ratings) || ncol(ratings) < 2)
-      stop("'ratings' has to be a matrix of at least two columns.")
+    if(!is.matrix(ratings) || ncol(ratings) < 2 || nrow(ratings) < 2)
+      stop("'ratings' has to be a matrix of at least two columns and two rows.")
+
+    na <- match.arg(NAaction)
+    ratings <- switch(na,
+                      fail = na.fail(ratings),
+                      omit = na.omit(ratings))
+    if(!is.matrix(ratings) || ncol(ratings) < 2|| nrow(ratings) < 2)
+      stop("'ratings' has to be a matrix of at least two columns and two rows after removing missing values.")
+
     
     method <- match.arg(method)
 
@@ -48,7 +56,7 @@ agree.wscv <- function(ratings, conf.level=0.95, method=c("vst", "delta")){
     msb <- sum((bar.x - mu.hat)^2) * k / (n-1)
 
     theta <- sqrt(mse) / mu.hat
-    
+
     rho <- ((n-1)*msb - n*mse) / ((n-1)*msb + n*(k-1)*mse)
     
     CI <- switch(method,

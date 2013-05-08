@@ -8,7 +8,8 @@
   within-subject coefficient of variation (WSCV).
 }
 \usage{
-  agree.wscv(ratings, conf.level=0.95, method=c("vst", "delta"))
+  agree.wscv(ratings, conf.level=0.95, method=c("vst", "delta"),
+             NAaction=c("fail", "omit"))
 }
 \arguments{
   \item{ratings}{a matrix of observations with one subject per row and one
@@ -19,6 +20,12 @@
 	obtain confidence interval of the WSCV.
     It must be one of "vst" and "delta" and may be abbreviated.
 	The default is "vst".}
+  \item{NAaction}{a character string specifying what should happen
+	when the data contain \code{NA}s. It must be one of "fail"
+	and "omit" and may be abbreviated. The default is "fail" that causes
+	the function to print an error message and terminate if there are
+	any incomplete observations. If it is "omit", then the entire row(s)
+	containing incomplete observation(s) will be deleted.}
 }
 \details{
   The point estimate is based on what proposed in Quan and Shih (1996).
