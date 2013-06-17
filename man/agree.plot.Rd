@@ -38,8 +38,8 @@
   \emph{Lancet} \bold{1} 307-310
 } 
 \seealso{
-  \code{\link[ResearchMethods]{BlandAltman}};
-  \code{\link[MethComp]{BlandAltman}}}
+  \code{\link[ResearchMethods]{BlandAltman}}
+}
 \examples{
   data(judgeRatings)
   agree.plot(judgeRatings)

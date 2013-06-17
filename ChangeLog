@@ -1,3 +1,10 @@
+2013-6-17 
+	* DESCRIPTION: change 'Depends' of 'miscF' to >= 0.1-2, which implemented
+	embedded C++ code to improve speed of mcmc for mvt. Change version to
+	0.2-1.
+	* man/agree.plot.Rd: remove cross-references to package 'MethComp'. 
+
+
 2013-5-04 
 	* R/agree.ccc.R: fix a bug in error checking of input parameters of function ccc.mm.
 	* R/agree.ccc.R;agree.wscv.R;agree.plot.R: Add actions to address missing values (NAs)

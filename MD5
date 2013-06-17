@@ -1,5 +1,5 @@
-427a9e06be08dc7632703bcaaf10f15b *ChangeLog
-334b06562419ad4c0ca84c69caa337d2 *DESCRIPTION
+3186c8f65f068fd94a6bbf8739223ebc *ChangeLog
+e1b53511475c3a5afff8281042f40eda *DESCRIPTION
 84f64a4dfb4a66b76183326471e20b3a *NAMESPACE
 0d7222c3da09b266d419bf781caaccfd *R/agree.ccc.R
 0cd7fb55af6b3c683f279a494995357d *R/agree.plot.R
@@ -7,7 +7,7 @@
 78b0911854cab08d3cb57bd120a24624 *data/judgeRatings.rda
 46e62a8273a33f166e126a489b0b1a9a *data/lesionBurden.rda
 2ab121016691e091960d6b0c64ab4ab8 *man/agree.ccc.Rd
-bb916fb6f413a7a93770b5e51ef0eca7 *man/agree.plot.Rd
+e4c26eb1bf623f16bf679ca7aa20ec84 *man/agree.plot.Rd
 f61f91d4eaef2d1219db91c7fc5e7de4 *man/agree.wscv.Rd
 fe3c9de6ad731518f94bdf4793175ee6 *man/judgeRatings.Rd
 fcb8de338b81a0a04ef675e11eb02b5b *man/lesionBurden.Rd
