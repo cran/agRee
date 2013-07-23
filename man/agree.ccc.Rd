@@ -79,6 +79,10 @@
   A robust Bayesian estimate of the concordance correlation coefficient.
   \emph{submitted for review}
 
+  Dai Feng,  Richard Baumgartner and Vladimir Svetnik (2013)
+  A short note on jackknifing the concordance correlation coefficient.
+  \emph{Statistics in Medicine (in press)}
+
   Dai Feng, Vladimir Svetnik, Alexandre Coimbra and Richard Baumgartner (2012)
   A comparison of confidence interval methods for the concordance
   correlation coefficient and intraclass correlation coefficient with

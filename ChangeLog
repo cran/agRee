@@ -1,3 +1,8 @@
+2013-7-23 
+	* DESCRIPTION: change to version 0.2-2.
+	* man/agree.plot.Rd: remove cross-references to package 'ResearchMethods'. 
+	* man/agree.ccc.Rd: add citation to the SiM paper on jackknifing the CCC. 
+
 2013-6-17 
 	* DESCRIPTION: change 'Depends' of 'miscF' to >= 0.1-2, which implemented
 	embedded C++ code to improve speed of mcmc for mvt. Change version to
