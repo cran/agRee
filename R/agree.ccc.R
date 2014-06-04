@@ -9,6 +9,7 @@ ccc.mm <- function(barY, S, n){
     if(! all(eigen(S)$values > 0))
         stop("'S' has to be positive definite.")
 
+    S <- S * (n-1) / n
     k <- nrow(S)
     #numerator
     nu <- 2 * sum(S[upper.tri(S)])
@@ -79,8 +80,31 @@ ccc.nonpara.bootstrap <- function(X, nboot, alpha){
     list(point=point, icl=CI[1], icu=CI[2])
 }
 #-----------------------------------------------------------------------------
+ccc.lognormalNormal.mcmc <- function(X, alpha, nmcmc){
+    mcmc.lognormalNormal <- lognormalNormal.mcmc(X=X, nmcmc=nmcmc)
+    mu <- mcmc.lognormalNormal$mu
+    sigma2.alpha <- mcmc.lognormalNormal$sigma2.alpha
+    sigma2.e <- mcmc.lognormalNormal$sigma2.e
+    betas <- mcmc.lognormalNormal$betas
 
+    nrater <- ncol(X)
+    diff.betas <- rep(0, length(mu))
+    for(i in 1:(nrater-1)){
+        for(j in 2:nrater){
+            diff.betas <- (betas[,j] - betas[,i])^2 + diff.betas
+        }
+    }
+    
+    ccc.Bayes <- (exp(2*mu+sigma2.alpha) * (exp(sigma2.alpha)-1)) /
+      (exp(2*mu+sigma2.alpha) * (exp(sigma2.alpha)-1) +
+       diff.betas/(nrater *(nrater-1)) + sigma2.e)
+    
+    point <- median(ccc.Bayes, na.rm=TRUE)
+    CI <- as.vector(quantile(ccc.Bayes, c(alpha/2, 1-alpha/2), na.rm=TRUE))
+    list(point=point, icl=CI[1], icu=CI[2])
 
+}
+#-----------------------------------------------------------------------------
 ccc.mvt.mcmc <- function(X, alpha, nmcmc,
                          prior.lower.v, prior.upper.v,
                          prior.Mu0, prior.Sigma0,
@@ -141,9 +165,10 @@ ccc.mvn.mcmc <- function(X, alpha, nmcmc, method){
 #-----------------------------------------------------------------------
 
 agree.ccc <- function(ratings, conf.level=0.95,
-                      method=c("jackknifeZ", "jackknife", "bootstrap",
+                      method=c("jackknifeZ", "jackknife",
+                               "bootstrap", "bootstrapBC",
                                "mvn.jeffreys", "mvn.conjugate",
-                               "mvt"),
+                               "mvt", "lognormalNormal"),
                       nboot=999, nmcmc=10000,
                       mvt.para=list(prior=list(lower.v=4, upper.v=25,
                                                Mu0=rep(0, ncol(ratings)),
@@ -152,7 +177,7 @@ agree.ccc <- function(ratings, conf.level=0.95,
                                                V=diag(1, ncol(ratings))),
                                     initial=list(v=NULL, Sigma=NULL)),
                       NAaction=c("fail", "omit")){
-    
+
     if(!is.matrix(ratings) || ncol(ratings) < 2|| nrow(ratings) < 3)
       stop("'ratings' has to be a matrix of at least two columns and three rows.")
 
@@ -172,6 +197,7 @@ agree.ccc <- function(ratings, conf.level=0.95,
     alpha <- 1 - conf.level
     
     estimate <- switch(method,
+                       lognormalNormal = ccc.lognormalNormal.mcmc(X, alpha, nmcmc),
                        mvt = ccc.mvt.mcmc(X, alpha, nmcmc,
                          mvt.para$prior$lower.v, mvt.para$prior$upper.v,
                          mvt.para$prior$Mu0, mvt.para$prior$Sigma0,
@@ -181,7 +207,8 @@ agree.ccc <- function(ratings, conf.level=0.95,
                        mvn.conjugate = ccc.mvn.mcmc(X, alpha, nmcmc, "Conjugate"),
                        jackknifeZ = unlist(ccc.nonpara.jackknife(X, alpha)[c(2,4)]),
                        jackknife = unlist(ccc.nonpara.jackknife(X, alpha)[c(1,3)]),
-                       bootstrap = ccc.nonpara.bootstrap(X, nboot, alpha))
+                       bootstrap = ccc.nonpara.bootstrap(X, nboot, alpha),
+                       bootstrapBC = sapply(ccc.nonpara.bootstrap(X, nboot, alpha), function(i) i*(1+10/n)))
     
     list(value=estimate[[1]], lbound=estimate[[2]], ubound=estimate[[3]])
 }

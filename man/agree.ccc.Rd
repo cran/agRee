@@ -2,8 +2,9 @@
 \title{Concordance Correlation Coefficient}
 \alias{agree.ccc}
 \alias{ccc.mm}
-\alias{ccc.mvt.mcmc}
+\alias{ccc.lognormalNormal.mcmc}
 \alias{ccc.mvn.mcmc}
+\alias{ccc.mvt.mcmc}
 \alias{ccc.nonpara.jackknife}
 \alias{ccc.nonpara.bootstrap}
 \description{
@@ -12,8 +13,10 @@
 }
 \usage{
   agree.ccc(ratings, conf.level=0.95,
-            method=c("jackknifeZ", "jackknife", "bootstrap",
-                     "mvn.jeffreys", "mvn.conjugate", "mvt"),
+            method=c("jackknifeZ", "jackknife",
+                     "bootstrap","bootstrapBC",
+                     "mvn.jeffreys", "mvn.conjugate",
+                     "mvt", "lognormalNormal"),
             nboot=999, nmcmc=10000,
             mvt.para=list(prior=list(lower.v=4, upper.v=25,
                                      Mu0=rep(0, ncol(ratings)),
@@ -30,8 +33,9 @@
 	is 0.95.}
   \item{method}{a character string specifying the method used to
 	obtain the estimate of the CCC.
-    It must be one of "jackknifeZ", "jackknife", "bootstrap", "mvn.jeffreys", 
-	"mvn.conjugate" and "mvt", 
+    It must be one of "jackknifeZ", "jackknife", "bootstrap",
+	"bootstrapBC", "mvn.jeffreys", "mvn.conjugate","mvt",
+	and "lognormalNormal", 
     and may be abbreviated.	The default is "jackknifeZ".}
   \item{nboot}{number of bootstrap replicates. The default value is 999.}
   \item{nmcmc}{number of iterations used in the Bayesian approach. The
@@ -66,8 +70,8 @@
 \details{
   To obtain point estimate and confidence interval, the methods available include the
   jackknife method with and without Z-transformation, the bootstrap,
-  and the Bayesian  approach for the multivariate t and the multivariate
-  normal distributions.
+  and the Bayesian  approach for the multivariate t, multivariate
+  normal and lognormal-normal distributions.
 }
 \value{
     Point estimate and lower and upper bounds of the confidence
@@ -75,19 +79,25 @@
 }
 \references{
 
+  Dai Feng, Richard Baumgartner and Vladimir Svetnik (2014)
+  A Bayesian estimate of the concordance correlation coefficient with skewed data.
+  \emph{under review}
+
   Dai Feng, Richard Baumgartner and Vladimir Svetnik (2013)
   A robust Bayesian estimate of the concordance correlation coefficient.
-  \emph{submitted for review}
+  \emph{Journal of Biopharmaceutical Statistics (in press)}
 
-  Dai Feng,  Richard Baumgartner and Vladimir Svetnik (2013)
-  A short note on jackknifing the concordance correlation coefficient.
-  \emph{Statistics in Medicine (in press)}
-
-  Dai Feng, Vladimir Svetnik, Alexandre Coimbra and Richard Baumgartner (2012)
+  Dai Feng, Vladimir Svetnik, Alexandre Coimbra and Richard Baumgartner (2014)
   A comparison of confidence interval methods for the concordance
   correlation coefficient and intraclass correlation coefficient with
   small number of raters.
-  \emph{Journal of Biopharmaceutical Statistics (in press)}
+  \emph{Journal of Biopharmaceutical Statistics} \bold{24(2)} 272-293,
+  doi: 10.1080/10543406.2013.863780.
+
+  Dai Feng,  Richard Baumgartner and Vladimir Svetnik (2014)
+  A short note on jackknifing the concordance correlation coefficient.
+  \emph{Statistics in Medicine} \bold{33(3)} 514-516, doi: 10.1002/sim.5931
+ 
 
   Lawrence I-Kuei Lin (1989)
   A concordance correlation coefficient to evaluate reproducibility.

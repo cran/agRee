@@ -1,3 +1,25 @@
+2014-4-14 
+        * man/agree.ccc.Rd: add method "bootstrapBC" and update citations 
+	related to the CCC. 
+
+2014-3-06 
+        * DESCRIPTION: move miscF to imports.
+	* NAMESAPCE: change accordingly.
+	
+	
+2014-2-17 
+	* DESCRIPTION: change to version 0.3-1.
+	* DESCRIPTION: add Imports from R2jags, and Depends on lme4
+	* R/: add lognormalNormal.mcmc.R
+	* R/agree.ccc.R: add function ccc.lognormalNormal.mcmc()
+	* man/agree.ccc.Rd: add method "lognormalNormal" 
+
+2013-10-11 
+	* DESCRIPTION: change to version 0.2-3.
+	* R/agree.ccc.R: in function ccc.mm(), use the sample counterparts
+	                 instead of unbiased estimators to estimate the CCC. 
+	* man/agree.ccc.Rd: change citations related to the CCC. 
+	
 2013-7-23 
 	* DESCRIPTION: change to version 0.2-2.
 	* man/agree.plot.Rd: remove cross-references to package 'ResearchMethods'. 
