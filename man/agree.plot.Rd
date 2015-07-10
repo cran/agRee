@@ -22,7 +22,7 @@
   of scatter plot(s) with identity line. The lower panel consists
   of the Bland-Altman plot(s) with confidence bounds and bias using dotted
   line in red color and the horizontal line passing through the origin
-  in black.
+  in black, respectively.
 }
 \note{
   The confidence bounds are mean of the difference between two raters

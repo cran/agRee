@@ -1,3 +1,19 @@
+2015-7-10
+	* NAMESPACE: add the missing imports
+
+2015-5-15
+	* R/: add agree.icc1.R. 
+	* man/: add agree.icc1.Rd.
+	* NAMESPACE: add agree.icc1.
+
+2015-1-6
+        * data/: add petVT.R
+	* man/: add petVT.Rd
+	* R/: add agree.sdd.R and agree.sddm.R.
+	* man/: add agree.sdd.Rd and agree.sddm.Rd.
+	* NAMESPACE: agree.sdd and agree.sddm
+	* DESCRIPTION: update version to 0.4-0.
+	
 2014-4-14 
         * man/agree.ccc.Rd: add method "bootstrapBC" and update citations 
 	related to the CCC. 

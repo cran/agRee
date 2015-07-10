@@ -1,5 +1,8 @@
-export(agree.ccc, agree.plot, agree.wscv)
+export(agree.plot, agree.ccc, agree.icc1, agree.wscv, agree.sdd, agree.sddm)
 
 import(miscF)
 import(lme4)
-importFrom("R2jags", jags)
+importFrom("R2jags", "jags")
+importFrom("coda", "HPDinterval", "mcmc")
+importFrom("graphics", "abline", "lines", "pairs", "par", "points") 
+importFrom("stats", "median", "na.fail", "na.omit", "qchisq", "qf", "qnorm", "qt", "quantile", "residuals", "sd", "var")
