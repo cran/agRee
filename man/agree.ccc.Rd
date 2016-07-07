@@ -16,7 +16,7 @@
             method=c("jackknifeZ", "jackknife",
                      "bootstrap","bootstrapBC",
                      "mvn.jeffreys", "mvn.conjugate",
-                     "mvt", "lognormalNormal"),
+                     "mvt", "lognormalNormal", "mvsn", "mvst"),
             nboot=999, nmcmc=10000,
             mvt.para=list(prior=list(lower.v=4, upper.v=25,
                                      Mu0=rep(0, ncol(ratings)),
@@ -35,8 +35,7 @@
 	obtain the estimate of the CCC.
     It must be one of "jackknifeZ", "jackknife", "bootstrap",
 	"bootstrapBC", "mvn.jeffreys", "mvn.conjugate","mvt",
-	and "lognormalNormal", 
-    and may be abbreviated.	The default is "jackknifeZ".}
+	"lognormalNormal", "mvsn", and "mvst". It can be abbreviated. The default is "jackknifeZ".}
   \item{nboot}{number of bootstrap replicates. The default value is 999.}
   \item{nmcmc}{number of iterations used in the Bayesian approach. The
 	default value is 10000.}
@@ -70,15 +69,18 @@
 \details{
   To obtain point estimate and confidence interval, the methods available include the
   jackknife method with and without Z-transformation, the bootstrap,
-  and the Bayesian  approach for the multivariate t, multivariate
-  normal and lognormal-normal distributions.
+  and the Bayesian approach for the multivariate normal, multivariate
+  t, lognormal-normal, multivariate skew normal, and multivariate skew t distributions.
 }
 \value{
     Point estimate and lower and upper bounds of the confidence
     interval of the CCC. 
 }
 \references{
-
+  Dai Feng, Richard Baumgartner and Vladimir Svetnik (2016)
+  Estimating the concordance correlation coefficient using a unified Bayesian framework
+  \emph{under review}
+  
   Dai Feng, Richard Baumgartner and Vladimir Svetnik (2015)
   A Bayesian estimate of the concordance correlation coefficient with skewed data.
   \emph{Pharmaceutical Statistics},
