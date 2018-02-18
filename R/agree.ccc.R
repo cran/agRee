@@ -181,10 +181,11 @@ ccc.mvt.mcmc <- function(X, alpha, nmcmc,
                          prior.p, prior.V,
                          initial.v, initial.Sigma){
 
-    mcmc.mvt <- mvt.mcmc(X, nmcmc, prior.lower.v, prior.upper.v,
+    mcmc.mvt <- mvt.mcmc(X, prior.lower.v, prior.upper.v,
                          prior.Mu0, prior.Sigma0,
                          prior.p, prior.V,
-                         initial.v=, initial.Sigma)
+                         initial.v, initial.Sigma,
+			 nmcmc)
     Sigma <- mcmc.mvt$Sigma.save
     Mu <- mcmc.mvt$Mu.save
     v <- mcmc.mvt$v.save

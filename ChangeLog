@@ -1,3 +1,6 @@
+2018-2
+	* DESCRIPTION: Depend on miscF (>= 0.1-4) and update version to 0.5-1.
+
 2016-7
 	* R/agree.ccc.R: add functions ccc.mvsn.mcmc() and ccc.mvst.mcmc()
 	* man/agree.ccc.Rd: add method "mvsn" and "mvst" 
