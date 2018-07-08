@@ -110,7 +110,7 @@
 } 
 \seealso{
   \code{\link[epiR]{epi.ccc}}, \code{\link[cccrm]{cccvc}},
-  \code{\link[Agreement]{agreement}}, \code{\link[miscF]{mvt.ecme}}
+  \code{\link[miscF]{mvt.ecme}}
 }
 \examples{
   data(judgeRatings)

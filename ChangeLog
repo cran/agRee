@@ -1,3 +1,6 @@
+2018-7
+	* DESCRIPTION: Remove see alsl to [Agreement]{agreement} and update version to 0.5-2.
+
 2018-2
 	* DESCRIPTION: Depend on miscF (>= 0.1-4) and update version to 0.5-1.
 
