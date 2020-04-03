@@ -1,5 +1,5 @@
-630e5dc4e9649bf7b37e81c85d68d537 *ChangeLog
-ea75bbc4934590cd883a076dd743b407 *DESCRIPTION
+9757174be0b6b145ca315c1a61fe4e6f *ChangeLog
+6b35dc93c182684017d1ec465798537b *DESCRIPTION
 688dcfd8aabe322a2404f6ef5f31f4e4 *NAMESPACE
 0ac329140dcb6801537f18337932e1d3 *R/agree.ccc.R
 b4f7fb3fee1f79a73f41f354cd86f244 *R/agree.icc1.R
@@ -8,8 +8,11 @@ d6fe60cfff81bc0a27a1941a5e05bc62 *R/agree.sdd.R
 decd5f311beb9b6bd4c8d89ebe4d6e37 *R/agree.sddm.R
 5076b984548097da5fbaddb4f0e89f95 *R/agree.wscv.R
 b9c58116919bede8fa48d7bd6b44ef14 *R/lognormalNormal.mcmc.R
+c49f6bd30b68f3ef81f62fe2accbc369 *data/judgeRatings.R
 f60bf8562ea18f0e299c3d75b6697aac *data/judgeRatings.rda
+ad516140b54d594694a5af6db8c792df *data/lesionBurden.R
 9253c67189569b72c7bd0a2464671bb2 *data/lesionBurden.rda
+a1eb7da65065155ec5abd11a5eb86456 *data/petVT.R
 f9415a7db840af221cdeaedfa1047763 *data/petVT.rda
 c02cf915a88f1c1208fc14daaac0690e *man/agree.ccc.Rd
 9c2e5e1c44472a823c9609ae2afe9578 *man/agree.icc1.Rd

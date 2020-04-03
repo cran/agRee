@@ -1,6 +1,6 @@
 Package: agRee
 Title: Various Methods for Measuring Agreement
-Version: 0.5-2
+Version: 0.5-3
 Author: Dai Feng
 Description: Bland-Altman plot and scatter plot with identity line 
              for visualization and point and 
@@ -11,11 +11,12 @@ Description: Bland-Altman plot and scatter plot with identity line
              within-subject coefficient of variation,
              smallest detectable difference, 
              and mean normalized smallest detectable difference.
-Maintainer: Dai Feng <dai_feng@merck.com>
+Maintainer: Dai Feng <daifeng.stat@gmail.com>
 Depends: R (>= 3.0.2), miscF (>= 0.1-4), lme4 (>= 1.0-4)
 Imports: R2jags (>= 0.03-11), coda (>= 0.16-1)
 License: GPL
 NeedsCompilation: no
-Packaged: 2018-07-08 16:40:28 UTC; dai
+LazyData: true
+Packaged: 2020-04-02 22:51:05 UTC; jingru
 Repository: CRAN
-Date/Publication: 2018-07-08 17:00:03 UTC
+Date/Publication: 2020-04-03 14:10:34 UTC
